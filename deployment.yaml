@@ -17,12 +17,10 @@ spec:
     spec:
       containers:
       - name: my-weatherapp
-        image:
+        image: karthikreddy06/weatherapp:latest  
         ports:
           - containerPort: 80
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,9 +29,9 @@ metadata:
   labels:
     app: my-app
 spec:
- selector:
-   app: my-app
+  selector:
+    app: my-app
   ports:
     - protocol: TCP
       port: 8083
-      targetPort: 8083
+      targetPort: 80
